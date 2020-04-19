@@ -1,0 +1,11 @@
+development:
+  api_token: 'enterprise.csp-1403'
+
+test:
+  api_token: 'enterprise.csp-1403'
+
+staging:
+  api_token: 'enterprise.csp-1403'
+
+production:
+  api_token: 'enterprise.csp-1403'

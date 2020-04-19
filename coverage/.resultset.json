@@ -1,0 +1,273 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/support/sidekiq.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/support/shoulda_matchers.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/support/database_cleaner_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          13,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          13,
+          null,
+          null,
+          1,
+          13,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/support/task.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/models/movie_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/models/movie.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          2,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/routing/movies_routing_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/controllers/api/v1/movies_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/controllers/api/v1/api_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/controllers/concerns/api_response.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1587285919
+  }
+}
