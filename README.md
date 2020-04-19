@@ -7,13 +7,66 @@ The setups steps expect following tools installed on the system.
 - Github
 - Ruby [2.7.0]
 - Rails [6.0.2.2]
+- Sidekiq
+- PostgreSQL
+
+
+##### Endpoinds
+
+```bash
+1) http://localhost:3000/api/v1/movies_seasons?page=1
+
+VERB GET
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+
+2) http://localhost:3000/api/v1/seasons
+
+VERB GET
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+
+3) http://localhost:3000/api/v1/movies_seasons
+
+VERB GET
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+
+4) http://localhost:3000/api/v1/purchases
+
+VERB POST
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+purchase id of the resource comes from the frontend
+type movie/season
+
+5) http://localhost:3000/api/v1/libraries
+
+VERB GET
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+```
 
 ##### 1. Check out the repository
 
 ```bash
 git@github.com:carlossanchezp/my-pet-api.git
 ```
-
 
 ##### 3. Create and setup the database
 
@@ -35,7 +88,13 @@ bundle exec rake db:reset
 rspec spec
 ```
 
-##### 6. Start the Rails server
+##### 6. Rake for checking caducated purchases
+
+```ruby
+bundle exec rake checking_caducated_wachings:library
+```
+
+##### 7. Start the Rails server
 
 You can start the rails server using the command given below.
 
