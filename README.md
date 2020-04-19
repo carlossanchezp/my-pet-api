@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Prerequisites
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+- Github
+- Ruby [2.7.0]
+- Rails [6.0.2.2]
 
-* System dependencies
+##### 1. Check out the repository
 
-* Configuration
+```bash
+git@github.com:carlossanchezp/my-pet-api.git
+```
 
-* Database creation
 
-* Database initialization
+##### 3. Create and setup the database
 
-* How to run the test suite
+Run the following commands to create and setup the database.
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+bundle exec rake db:create
+bundle exec rake db:setup
+```
+##### 4. Cleaning all database and start
 
-* Deployment instructions
+```ruby
+bundle exec rake db:reset
+```
 
-* ...
+##### 5. Testing Rspec
+
+```ruby
+rspec spec
+```
+
+##### 6. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+bundle exec rails s
+```
+
+And now you can visit the site with the URL http://localhost:3000
