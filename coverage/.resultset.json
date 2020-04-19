@@ -38,7 +38,7 @@
           null,
           null,
           1,
-          13,
+          28,
           null,
           null,
           1,
@@ -46,11 +46,11 @@
           null,
           null,
           1,
-          13,
+          28,
           null,
           null,
           1,
-          13,
+          28,
           null,
           null,
           null
@@ -86,6 +86,44 @@
           1,
           1,
           null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/models/episode_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/models/episode.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -142,10 +180,53 @@
           null
         ]
       },
-      "/Users/carlossanchezperez/Projects/my-pet-api/app/models/application_record.rb": {
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/models/season_spec.rb": {
         "lines": [
           1,
+          null,
           1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/models/season.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          3,
           null
         ]
       },
@@ -266,8 +347,75 @@
           null,
           null
         ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/spec/routing/seasons_routing_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlossanchezperez/Projects/my-pet-api/app/controllers/api/v1/seasons_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1587285919
+    "timestamp": 1587292417
   }
 }

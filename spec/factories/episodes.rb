@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :movie do
-    title { "Film 1" }
+  factory :episode do
+    title { "Episode1" }
     plot { "Lorem ipsum dolor sit amet" }
   end
 end
