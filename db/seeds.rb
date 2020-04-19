@@ -12,10 +12,25 @@ User.create(email: "carlos@example.com")
 User.create(email: "alfredo@example.com")
 
 ## Movies examples
-Movie.create(title: "Title movie 1", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
-Movie.create(title: "Title movie 2", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
-Movie.create(title: "Title movie 3", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
-Movie.create(title: "Title movie 4", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
+movie1=Movie.create(title: "Title movie 1", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
+movie2=Movie.create(title: "Title movie 2", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
+movie3=Movie.create(title: "Title movie 3", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
+movie4=Movie.create(title: "Title movie 4", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")
+
+## Purchases
+
+Purchase.create(price: 0.99, video_quality:"HD",purchaseable: movie1)
+Purchase.create(price: 4.99, video_quality:"SD",purchaseable: movie1)
+
+Purchase.create(price: 0.99, video_quality:"HD",purchaseable: movie2)
+Purchase.create(price: 4.99, video_quality:"SD",purchaseable: movie2)
+
+Purchase.create(price: 0.99, video_quality:"HD",purchaseable: movie3)
+Purchase.create(price: 4.99, video_quality:"SD",purchaseable: movie3)
+
+Purchase.create(price: 0.99, video_quality:"HD",purchaseable: movie4)
+Purchase.create(price: 4.99, video_quality:"SD",purchaseable: movie4)
+
 
 ## Season examples
 season1=Season.create(title: "Title season 1", plot: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.")

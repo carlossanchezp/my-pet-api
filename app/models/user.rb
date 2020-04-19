@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+    ### RELATIONS
+    has_many :libraries
+    
     ### VALIDATIONS
     validates :email, presence: true
     validates :auth_token, uniqueness: true
