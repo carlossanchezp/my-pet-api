@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-04-19T20:11:09+02:00">2020-04-19T20:11:09+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-04-19T21:10:24+02:00">2020-04-19T21:10:24+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  96.52%
+  96.55%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.06
+         4.05
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>517</b> relevant lines,
-    <span class="green"><b>499</b> lines covered</span> and
+    <b>522</b> relevant lines,
+    <span class="green"><b>504</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed. </span>
     (<span class="green">
-  96.52%
+  96.55%
 </span>
 )
   </div>
@@ -73,7 +73,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e4075ab25e892089b3833d43713ecddc383e1077" class="src_link" title="app/controllers/api/v1/api_controller.rb">app/controllers/api/v1/api_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">35</td>
+            <td class="cell--number">34</td>
             <td class="cell--number">13</td>
             <td class="cell--number">13</td>
             <td class="cell--number">0</td>
@@ -249,11 +249,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4ebb06289cd34cde52d867e8f232c807896e9e69" class="src_link" title="app/serializers/library_serializer.rb">app/serializers/library_serializer.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">22</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">12</td>
+            <td class="cell--number">34</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">3.00</td>
+            <td class="cell--number">3.12</td>
             
           </tr>
         
@@ -923,23 +923,12 @@
 
             
 
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="35">
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
@@ -3930,8 +3919,8 @@
     
 
     <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>17</b> relevant lines.
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4026,7 +4015,7 @@
 
             
 
-            <code class="ruby">    if (object.expired_time.strftime(&quot;%d/%m/%Y&quot;).to_date &gt;= DateTime.now.strftime(&quot;%d/%m/%Y&quot;).to_date)</code>
+            <code class="ruby">    if it_is_in_time?(object)</code>
           </li>
         </div>
       
@@ -4037,7 +4026,7 @@
 
             
 
-            <code class="ruby">      ((DateTime.now.strftime(&quot;%d/%m/%Y&quot;).to_date)-(object.expired_time.strftime(&quot;%d/%m/%Y&quot;).to_date)).abs.to_i</code>
+            <code class="ruby">      calculate_number_of_days_viewing(object)</code>
           </li>
         </div>
       
@@ -4059,23 +4048,34 @@
 
             
 
-            <code class="ruby">      days = ((object.expired_time.strftime(&quot;%d/%m/%Y&quot;).to_date-(DateTime.now.strftime(&quot;%d/%m/%Y&quot;).to_date))).abs.to_i</code>
+            <code class="ruby">      DeactivateWatchingHardWorker.perform_async(object.id) if out_days_in_time(calculate_number_of_days_out(object))</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="12">
-            <span class="hits">4</span>
+          <li class="never" data-hits="" data-linenumber="12">
+            
             
 
             
 
-            <code class="ruby">      DeactivateWatchingHardWorker.perform_async(object.id) if out_days_in_time(days)</code>
+            <code class="ruby">      ## It&#39;s the best way to hide to a user a problem in a resource active but must be deactivated</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">      ## Next time is already deactivated or a cron rake checked caducated system or this worker DeactivateWatching</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="14">
             <span class="hits">4</span>
             
 
@@ -4086,7 +4086,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -4097,7 +4097,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -4108,7 +4108,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -4119,7 +4119,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="18">
             <span class="hits">1</span>
             
 
@@ -4130,35 +4130,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
           <li class="covered" data-hits="1" data-linenumber="19">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def out_days_in_time(days)</code>
+            <code class="ruby">    def it_is_in_time?(object)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="20">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="9" data-linenumber="20">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">    days &gt; 2</code>
+            <code class="ruby">      (object.expired_time.strftime(&quot;%d/%m/%Y&quot;).to_date &gt;= DateTime.now.strftime(&quot;%d/%m/%Y&quot;).to_date)</code>
           </li>
         </div>
       
@@ -4169,12 +4158,144 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def calculate_number_of_days_viewing(object)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="24">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      ((DateTime.now.strftime(&quot;%d/%m/%Y&quot;).to_date)-(object.expired_time.strftime(&quot;%d/%m/%Y&quot;).to_date)).abs.to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def calculate_number_of_days_out(object)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="28">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">      ((object.expired_time.strftime(&quot;%d/%m/%Y&quot;).to_date-(DateTime.now.strftime(&quot;%d/%m/%Y&quot;).to_date))).abs.to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def out_days_in_time(days)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="32">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    days &gt; 2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
