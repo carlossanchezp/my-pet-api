@@ -16,6 +16,18 @@ RSpec.describe Api::V1::PurchasesController, type: :controller do
             @purchase_season=Purchase.create(price: 4.99,video_quality: 'SD',purchaseable: @season )             
         end
 
+        it 'purchase a movie not exist...' do
+            page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
+            page.driver.header 'PURCHASE', 9999
+            page.driver.post(api_v1_purchases_path)
+
+            expect(page.status_code).to be(422)  
+            
+            data = JSON.parse(page.body)
+            expect(data["message"]).to match Api::V1::ApiController::MESSAGE_NOT_FOUND
+            
+       end
+
         it 'purchase a movie...' do
             page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
             page.driver.header 'PURCHASE', @purchase_movie.id
@@ -31,7 +43,6 @@ RSpec.describe Api::V1::PurchasesController, type: :controller do
 
             expect(Library.count).to match 1
             expect(@user.libraries.first.libraryable.id == @purchase_movie.purchaseable.id).to be true
-            
        end
 
        it 'when purchase a movie and it is already bought...' do
