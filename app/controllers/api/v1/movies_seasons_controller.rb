@@ -6,9 +6,10 @@ module Api::V1
 
       objetc_union(@movies,@seasons)
 
-      render :json => {:movies => @movies,
-       :seasons => @seasons,
-       meta: pagination_dict_all(@movies, @seasons),
+      render json: {
+        movies: ActiveModel::Serializer::CollectionSerializer.new(@movies, each_serializer: MovieSerializer),
+        seasons: ActiveModel::Serializer::CollectionSerializer.new(@seasons, each_serializer: SeasonSerializer),
+        meta: pagination_dict_all(@movies, @seasons),
       }
     end
 

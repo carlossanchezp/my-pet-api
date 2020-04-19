@@ -2,6 +2,12 @@ module Api::V1
     class ApiController < ApplicationController
         ### CONSTANTS       
         ITEMS_PER_PAGE_API = 5
+        TYPE_PRODUCT = 'movie'
+
+
+        MESSAGE_ALREADY_BOUGHT  = 'Sorry, already bought.'
+        MESSAGE_NOT_FOUND = 'Not Found'
+        MESSAGE_NOT_FOUND_PURCHASE = 'You have not made a purchase'
 
         # https://github.com/rails-api/active_model_serializers/blob/v0.10.6/docs/howto/add_pagination_links.md#json-adapter
         # Add paginations to render json metadata
@@ -24,6 +30,5 @@ module Api::V1
             total_count: (collection.count + collection_add.count)
             }
         end
-
     end
 end

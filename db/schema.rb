@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_091949) do
+ActiveRecord::Schema.define(version: 2020_04_19_111825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,33 @@ ActiveRecord::Schema.define(version: 2020_04_19_091949) do
     t.index ["season_id"], name: "index_episodes_on_season_id"
   end
 
+  create_table "libraries", force: :cascade do |t|
+    t.datetime "expired_time"
+    t.boolean "active"
+    t.string "libraryable_type"
+    t.bigint "libraryable_id"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["libraryable_type", "libraryable_id"], name: "index_libraries_on_libraryable_type_and_libraryable_id"
+    t.index ["user_id"], name: "index_libraries_on_user_id"
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "plot"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.decimal "price"
+    t.string "video_quality"
+    t.string "purchaseable_type"
+    t.bigint "purchaseable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["purchaseable_type", "purchaseable_id"], name: "index_purchases_on_purchaseable_type_and_purchaseable_id"
   end
 
   create_table "seasons", force: :cascade do |t|
@@ -47,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_04_19_091949) do
   end
 
   add_foreign_key "episodes", "seasons"
+  add_foreign_key "libraries", "users"
 end
