@@ -1,24 +1,105 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Prerequisites
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+- Github
+- Ruby [2.7.0]
+- Rails [6.0.2.2]
+- Sidekiq
+- PostgreSQL
 
-* System dependencies
 
-* Configuration
+##### Endpoinds
 
-* Database creation
+```bash
+1) http://localhost:3000/api/v1/movies_seasons?page=1
 
-* Database initialization
+VERB GET
 
-* How to run the test suite
+Mandatory in HEADERS
 
-* Services (job queues, cache servers, search engines, etc.)
+API_TOKEN
+USER_AUTH_TOKEN
 
-* Deployment instructions
+2) http://localhost:3000/api/v1/seasons
 
-* ...
+VERB GET
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+
+3) http://localhost:3000/api/v1/movies_seasons
+
+VERB GET
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+
+4) http://localhost:3000/api/v1/purchases
+
+VERB POST
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+purchase id of the resource comes from the frontend
+type movie/season
+
+5) http://localhost:3000/api/v1/libraries
+
+VERB GET
+
+Mandatory in HEADERS
+
+API_TOKEN
+USER_AUTH_TOKEN
+```
+
+##### 1. Check out the repository
+
+```bash
+git@github.com:carlossanchezp/my-pet-api.git
+```
+
+##### 3. Create and setup the database
+
+Run the following commands to create and setup the database.
+
+```ruby
+bundle exec rake db:create
+bundle exec rake db:setup
+```
+##### 4. Cleaning all database and start
+
+```ruby
+bundle exec rake db:reset
+```
+
+##### 5. Testing Rspec
+
+```ruby
+rspec spec
+```
+
+##### 6. Rake for checking caducated purchases
+
+```ruby
+bundle exec rake checking_caducated_wachings:library
+```
+
+##### 7. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+bundle exec rails s
+```
+
+And now you can visit the site with the URL http://localhost:3000
