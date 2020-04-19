@@ -15,5 +15,15 @@ module Api::V1
             }
         end
 
+        def pagination_dict_all(collection,collection_add)
+            {
+            current_page: collection.current_page,
+            next_page: collection.next_page,
+            prev_page: collection.previous_page,
+            total_pages: ((collection.total_pages > collection_add.total_pages) ? collection.total_pages : collection_add.total_pages),
+            total_count: (collection.count + collection_add.count)
+            }
+        end
+
     end
 end
