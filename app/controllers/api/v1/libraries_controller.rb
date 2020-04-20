@@ -8,7 +8,7 @@ module Api::V1
                             order_by_remaining_time.where(user: @current_user).
                             page(params[:page]).
                             per_page(ITEMS_PER_PAGE_API).all
-      render(json: @libraries, 
+        render(json: @libraries, 
         each_serializer: LibrarySerializer, 
         meta: pagination_dict(@libraries))       
     end

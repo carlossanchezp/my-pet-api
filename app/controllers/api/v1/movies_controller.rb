@@ -4,12 +4,13 @@ module Api::V1
 
     # GET /movies
     def index
-      @movies = Movie.order_by_create.page(params[:page]).per_page(ITEMS_PER_PAGE_API).all
+      @movies = Movie.order_by_create.
+                      page(params[:page]).
+                      per_page(ITEMS_PER_PAGE_API).all
 
-      render(json: @movies, 
+        render(json: @movies, 
         each_serializer: MovieSerializer, 
         meta: pagination_dict(@movies))
-
     end
 
     # GET /movies/1

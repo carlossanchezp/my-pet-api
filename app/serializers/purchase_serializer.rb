@@ -3,5 +3,4 @@ class PurchaseSerializer < ActiveModel::Serializer
 
   ### RELATIONS
   belongs_to :purchaseable, :polymorphic => true
-
 end

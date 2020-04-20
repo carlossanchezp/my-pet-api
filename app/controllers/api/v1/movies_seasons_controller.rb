@@ -18,6 +18,5 @@ module Api::V1
     def objetc_union(object_origin,object_destination)
       object_origin.merge(object_destination)
     end
-
   end
 end

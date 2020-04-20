@@ -4,7 +4,9 @@ module Api::V1
 
     # GET /seasons
     def index
-      @seasons = Season.order_by_create.page(params[:page]).per_page(ITEMS_PER_PAGE_API).all
+      @seasons = Season.order_by_create.
+                        page(params[:page]).
+                        per_page(ITEMS_PER_PAGE_API).all
       render(json: @seasons, 
         each_serializer: SeasonSerializer, 
         meta: pagination_dict(@seasons))

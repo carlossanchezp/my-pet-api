@@ -1,22 +1,22 @@
 class DeactivateWatchingHardWorker
-    include Sidekiq::Worker
+  include Sidekiq::Worker
 
-    def perform(*args)
+  def perform(*args)
 
-        return 0 unless args[0].present?
-        library_id = args[0].to_i
+    return 0 unless args[0].present?
+    library_id = args[0].to_i
 
-        library   = set_library(library_id)
+    library   = set_library(library_id)
 
-        if library.present?
-            library.active = false
-            library.save!
-        end
+    if library.present?
+      library.active = false
+      library.save!
     end
+  end
 
-    private
+  private
 
-    def set_library(library_id)
-        Library.where(id: library_id).first
-    end
+  def set_library(library_id)
+    Library.where(id: library_id).first
+  end
 end

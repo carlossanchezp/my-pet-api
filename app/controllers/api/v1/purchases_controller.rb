@@ -1,6 +1,5 @@
 module Api::V1
   class PurchasesController < ApiController
-
     # POST /purchases
     def create
       @purchase = Purchase.where("id = ?",request.headers["HTTP_PURCHASE"]).first
@@ -8,16 +7,16 @@ module Api::V1
 
       if @purchase.present?
         if is_already_bought?(@purchase,@current_user)
-          error, message_error = true, MESSAGE_ALREADY_BOUGHT
+          error, message_error = true, I18n.t(:already_bought)
         else
           make_purchase_async(@purchase,@current_user)
         end 
       else 
-        error, message_error = true, MESSAGE_NOT_FOUND    
+        error, message_error = true, I18n.t(:not_found)    
       end
 
       render json: @purchase, status: :created unless error
-      render :json => {message: message_error}, status: :unprocessable_entity if  error
+      render json: {message: message_error}, status: :unprocessable_entity if  error
     end
 
     private
