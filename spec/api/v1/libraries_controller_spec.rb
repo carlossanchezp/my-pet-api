@@ -9,7 +9,6 @@ RSpec.describe Api::V1::LibrariesController, type: :controller do
             @user2 = create :user
 
             page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
-            page.driver.header 'TYPE', 'movie'
             @movie = create(:movie)
             @movie2 = create(:movie)
             @movie3 = create(:movie)

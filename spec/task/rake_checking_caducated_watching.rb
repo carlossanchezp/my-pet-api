@@ -2,7 +2,7 @@ class RakeTaskFileTaskTest < ActiveSupport::TestCase
 
   describe 'checking_caducated_wachings:library' do
 
-    it "must will be caducated" do
+    it "when have a actie and caducated active and goes to caducate" do
         @movie = create(:movie)
         @user = create :user
 
@@ -20,7 +20,13 @@ class RakeTaskFileTaskTest < ActiveSupport::TestCase
         expect(Library.active.count).to be 1
         expect(Library.where(active: false).count).to be 4
         expect(Library.count).to be 5
-
     end
+
+    it 'should have all libraries order by acived and remaining_time ...' do
+      expect(Library.order_by_remaining_time.to_sql).to eq Library.order(expired_time: :asc).to_sql
+      expect(Library.active.to_sql).to eq Library.where(active: TRUE).to_sql
+      expect(Library.active.order_by_remaining_time.to_sql).to eq Library.where(active: TRUE).order(expired_time: :asc).to_sql
+    end 
+
   end
 end
