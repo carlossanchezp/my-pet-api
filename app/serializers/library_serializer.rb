@@ -28,7 +28,7 @@ class LibrarySerializer < ActiveModel::Serializer
       ((object.expired_time.strftime("%d/%m/%Y").to_date-(DateTime.now.strftime("%d/%m/%Y").to_date))).abs.to_i
     end
 
-  def out_days_in_time(days)
-    days > 2
-  end
+    def out_days_in_time(days)
+      days > 2
+    end
 end
