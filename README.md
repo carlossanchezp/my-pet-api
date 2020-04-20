@@ -41,7 +41,7 @@ Mandatory in HEADERS
 API_TOKEN
 USER_AUTH_TOKEN
 
-4) http://localhost:3000/api/v1/purchases
+4) http://localhost:3000/api/v1/libraries
 
 VERB POST
 
@@ -49,7 +49,7 @@ Mandatory in HEADERS
 
 API_TOKEN
 USER_AUTH_TOKEN
-purchase id of the resource comes from the frontend
+purchase: it is a id of the resource comes from the frontend
 
 5) http://localhost:3000/api/v1/libraries
 
