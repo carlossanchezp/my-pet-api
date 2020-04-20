@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe Api::V1::LibrariesController, type: :routing do
   describe "routing" do
     it "routes to #index" do
-      expect(get: ('api/v1/libraries')).to route_to(:controller => "api/v1/libraries" , :action => "index")
+      expect(get: ('api/v1/libraries')).to route_to(controller: "api/v1/libraries" , action: "index")
     end
 
     it "routes to #show" do
@@ -11,7 +11,7 @@ RSpec.describe Api::V1::LibrariesController, type: :routing do
     end
 
     it "routes to #create" do
-      expect(post: "api/v1//libraries").not_to be_routable
+      expect(post: "api/v1//libraries").to route_to(controller: "api/v1/libraries" , action: "create")
     end
 
     it "routes to #update via PUT" do
