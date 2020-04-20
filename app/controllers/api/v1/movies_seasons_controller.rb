@@ -1,5 +1,7 @@
 module Api::V1
   class MoviesSeasonsController < ApiController
+    
+    # GET /movies_sesions
     def index
       @movies  = Movie.order_by_create.page(params[:page]).per_page(ITEMS_PER_PAGE_API).all
       @seasons = Season.order_by_create.page(params[:page]).per_page(ITEMS_PER_PAGE_API).all

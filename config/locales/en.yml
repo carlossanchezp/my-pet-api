@@ -31,7 +31,7 @@
 
 en:
   hello: "Hello world"
-  already_bouth: 'Sorry, already bought.'      
+  already_bougth: 'Sorry, already bought.'      
   not_found: 'Not Found'
   not_found_purchase: 'You have not made a purchase'
 

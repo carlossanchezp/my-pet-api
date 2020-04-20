@@ -15,7 +15,7 @@ namespace :checking_caducated_wachings do
   end
 
   def deactivate_waching(library)
-    library.active = 0
-    library.save!
+    byebug
+    library.update(active: false)
   end
 end
