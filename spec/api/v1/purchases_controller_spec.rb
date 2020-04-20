@@ -16,7 +16,7 @@ RSpec.describe Api::V1::PurchasesController, type: :controller do
             @purchase_season=Purchase.create(price: 4.99,video_quality: 'SD',purchaseable: @season )             
         end
 
-        it 'purchase a movie not exist...' do
+        it 'purchase and not exist...' do
             page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
             page.driver.header 'PURCHASE', 9999
             page.driver.post(api_v1_purchases_path)
@@ -24,9 +24,8 @@ RSpec.describe Api::V1::PurchasesController, type: :controller do
             expect(page.status_code).to be(422)  
             
             data = JSON.parse(page.body)
-            expect(data["message"]).to match Api::V1::ApiController::MESSAGE_NOT_FOUND
-            
-       end
+            expect(data["message"]).to match Api::V1::ApiController::MESSAGE_NOT_FOUND 
+        end
 
         it 'purchase a movie...' do
             page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
@@ -62,11 +61,12 @@ RSpec.describe Api::V1::PurchasesController, type: :controller do
             expect(data["message"]).to match Api::V1::ApiController::MESSAGE_ALREADY_BOUGHT
         end
 
-        it 'purchase a movie and the same purchase by other user ...' do
+        it 'when purchase a movie and the same purchase by other user ...' do
             Library.create(expired_time: (DateTime.now + 3),user: @user,libraryable: @movie, active: true)
 
             page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
             page.driver.header 'PURCHASE', @purchase_movie.id
+
             page.driver.post(api_v1_purchases_path)
             data = JSON.parse(page.body)
 
@@ -79,10 +79,9 @@ RSpec.describe Api::V1::PurchasesController, type: :controller do
             data = JSON.parse(page.body)
              
             expect(page.status_code).to be(201)  
-
         end
 
-       it 'when purchase a season...' do
+       it 'purchase a season...' do
             page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
             page.driver.header 'PURCHASE', @purchase_season.id
 

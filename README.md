@@ -50,7 +50,6 @@ Mandatory in HEADERS
 API_TOKEN
 USER_AUTH_TOKEN
 purchase id of the resource comes from the frontend
-type movie/season
 
 5) http://localhost:3000/api/v1/libraries
 

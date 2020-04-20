@@ -7,10 +7,14 @@ RSpec.describe Api::V1::MoviesSeasonsController, type: :controller do
             page.driver.header 'USER_AUTH_TOKEN', @user.auth_token
             30.times do
                 create(:movie)
-            end 
-            20.times do
-                create(:season)
             end  
+            30.times do
+                create(:season) do |season|
+                    10.times do |n|
+                        season.episodes.create(title: 'Episode #{n}', plot: 'Lorem ipsum dolor sit amet', num_episode: n)
+                    end
+                end
+            end 
         end
 
         it 'should have all movies and season data...' do
@@ -41,11 +45,13 @@ RSpec.describe Api::V1::MoviesSeasonsController, type: :controller do
             expect(data["meta"]["total_count"]).to match (Season.count + Movie.count)
         end
 
-
         it 'should have all movies and seasons order by created_at ...' do
             expect(Movie.order_by_create.to_sql).to eq Movie.order(created_at: :asc).to_sql
             expect(Season.order_by_create.to_sql).to eq Season.order(created_at: :asc).to_sql
         end
-    end
 
+        it 'should have all seasons and episodies order by number of episode ...' do
+            expect(Episode.order_by_num_episode.to_sql).to eq Episode.order(num_episode: :asc).to_sql
+        end
+    end
 end
