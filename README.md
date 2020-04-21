@@ -75,11 +75,13 @@ Run the following commands to create and setup the database.
 bundle exec rake db:create
 bundle exec rake db:setup
 ```
+
 ##### 4. Cleaning all database and start
 
 ```ruby
 bundle exec rake db:reset
 ```
+
 ##### 5. Create data
 
 ```ruby
