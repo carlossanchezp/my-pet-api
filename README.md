@@ -80,20 +80,25 @@ bundle exec rake db:setup
 ```ruby
 bundle exec rake db:reset
 ```
+##### 5. Create data
 
-##### 5. Testing Rspec
+```ruby
+bundle exec rake db:seed
+```
+
+##### 6. Testing Rspec
 
 ```ruby
 rspec spec
 ```
 
-##### 6. Rake for checking caducated purchases
+##### 7. Rake for checking caducated purchases
 
 ```ruby
 bundle exec rake checking_caducated_wachings:library
 ```
 
-##### 7. Start the Rails server
+##### 8. Start the Rails server
 
 You can start the rails server using the command given below.
 
